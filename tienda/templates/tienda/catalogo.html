@@ -1,0 +1,23 @@
+{% extends 'tienda/base.html' %}
+
+{% block content %}
+
+<h2>Catálogo de Productos</h2>
+
+{% for producto in productos %}
+
+<div style="border:1px solid gray; padding:10px; margin:10px;">
+    
+    <h3>{{ producto.nombre }}</h3>
+
+    <p>{{ producto.descripcion }}</p>
+
+    <p>Precio: ${{ producto.precio }}</p>
+
+    <p>Stock: {{ producto.stock }}</p>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}
