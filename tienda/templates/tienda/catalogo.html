@@ -4,23 +4,26 @@
 
 <h2>Catálogo de Productos</h2>
 
+<div class="productos-grid">
+
 {% for producto in productos %}
 
-<div style="border:1px solid gray; padding:10px; margin:10px;">
-    
-    <h3>{{ producto.nombre }}</h3>
-     {% if producto.imagen %}
-        <img src="{{ producto.imagen.url }}" width="200">
-    {% endif %}
+<div class="producto-card">
 
-    <p>{{ producto.descripcion }}</p>
+{% if producto.imagen %}
+<img src="{{ producto.imagen.url }}">
+{% endif %}
 
-    <p>Precio: ${{ producto.precio }}</p>
+<h3>{{ producto.nombre }}</h3>
 
-    <p>Stock: {{ producto.stock }}</p>
+<p>{{ producto.descripcion }}</p>
+
+<p class="precio">$ {{ producto.precio }}</p>
 
 </div>
 
 {% endfor %}
+
+</div>
 
 {% endblock %}
