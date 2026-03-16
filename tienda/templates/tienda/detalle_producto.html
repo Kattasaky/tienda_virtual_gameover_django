@@ -2,31 +2,21 @@
 
 {% block content %}
 
-<h2>Catálogo de Productos</h2>
+<div class="detalle-producto">
 
-<div class="productos-grid">
-
-{% for producto in productos %}
-
-<a href="/producto/{{ producto.id }}/">
-
-<div class="producto-card">
+<h2>{{ producto.nombre }}</h2>
 
 {% if producto.imagen %}
 <img src="{{ producto.imagen.url }}">
 {% endif %}
 
-<h3>{{ producto.nombre }}</h3>
-
 <p>{{ producto.descripcion }}</p>
 
 <p class="precio">$ {{ producto.precio }}</p>
 
-</div>
+<p>Stock disponible: {{ producto.stock }}</p>
 
-</a>
-
-{% endfor %}
+<a href="/">← Volver al catálogo</a>
 
 </div>
 

@@ -9,3 +9,10 @@ def catalogo(request):
     return render(request, 'tienda/catalogo.html', {
         'productos': productos
     })    
+
+def detalle_producto(request, id):
+    producto = Producto.objects.get(id=id)
+
+    return render(request, 'tienda/detalle_producto.html', {
+        'producto': producto
+    })

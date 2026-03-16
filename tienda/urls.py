@@ -3,4 +3,5 @@ from . import views #importamos las vistas de la app
 
 urlpatterns = [ #definimos la ruta para el catálogo de productos
     path('', views.catalogo, name='catalogo'),
+    path('producto/<int:id>/', views.detalle_producto, name='detalle_producto'),
 ]
