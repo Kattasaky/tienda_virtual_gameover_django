@@ -16,8 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include #importamos la función include para incluir las urls de la app
+from django.conf import settings #importamos la configuración de settings para servir archivos multimedia en desarrollo
+from django.conf.urls.static import static #importamos la función static para servir archivos multimedia en desarrollo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('tienda.urls')), #incluimos las urls de la app tienda
-]
+]           
+
+#aca añadimos la configuración para servir archivos multimedia en desarrollo
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
