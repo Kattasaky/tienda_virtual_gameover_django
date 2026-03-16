@@ -116,6 +116,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [] # carpeta para archivos estáticos
 
 MEDIA_URL = '/media/' # URL para acceder a los archivos multimedia
 MEDIA_ROOT = 'media' # carpeta donde se guardan los archivos multimedia
